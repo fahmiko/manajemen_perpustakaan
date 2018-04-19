@@ -1,0 +1,2 @@
+Buat database dengan nama manajemen_perpustakaan
+import tabel ke database tersebut
