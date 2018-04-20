@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('data_admin');
+		$this->load->model('data_pinjaman');
 	}
 
 	public function index()
@@ -17,7 +18,7 @@ class Admin extends CI_Controller {
 								 'akses'   => $this->session->userdata('akses'),
 								 'id_user' => $this->session->userdata('id_user')
 								);
-		$this->load->view('admin/header', $data);
+		$this->load->view('admin/header');
 		$this->load->view('admin/beranda', $data, FALSE);
 		$this->load->view('admin/footer');
 		}
@@ -25,8 +26,14 @@ class Admin extends CI_Controller {
 
 	public function cek_login(){
 		//Untuk validasi username dan password
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|max_length[12]');
+		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]',
+				array(
+					'required' => "Username tidak boleh kosong"
+				));
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]',
+				array(
+					'required' => "Password tidak boleh kosong"
+				));
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/login');
@@ -52,8 +59,15 @@ class Admin extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('Admin','refresh');
 	}
+
+	public function pinjaman(){
+		$data['pinjaman'] = $this->data_pinjaman->get_data_pinjaman();
+		$this->load->view('admin/header');
+		$this->load->view('admin/pinjaman', $data, FALSE);
+		$this->load->view('admin/footer');
+	}
 }
 
-/* End of file Login.php */
-/* Location: ./application/controllers/Login.php */
+/* End of file Admin.php */
+/* Location: ./application/controllers/Admin.php */
 ?>

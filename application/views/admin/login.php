@@ -14,21 +14,22 @@
                         <h3 class="panel-title">Sign In</h3>
                     </div>
                     <div class="panel-body">
-                    <?php echo form_open('Admin/cek_login') ?>
+                    <?php echo form_open('Admin/cek_login', array('class' => 'needs-validation', 'novalidate' => '')) ?>
                             <fieldset>
-                                <div class="form-group">
+                                <div class="input-group">
+                                	<span class="input-group-addon" id="basic-addon1">
+                                		<span class="glyphicon glyphicon-user"></span>
+                                	</span>
                                     <input class="form-control" placeholder="Username" name="username" autofocus="">
                                 </div>
-                                <div class="form-group">
+                                <div class="input-group">
+                                	<span class="input-group-addon" id="basic-addon1">
+                                		<span class="glyphicon glyphicon-lock"></span>
+                                	</span>
                                     <input class="form-control" placeholder="Password" name="password" type="password">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
+                                </div><br><br>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <input type="submit" value="Login" class="btn btn-sm btn-success">
+                                <input type="submit" id="submitBtn" value="Login" class="btn btn-sm btn-success">
                             </fieldset>
                             <?php if(validation_errors()){?>
 							<div class="panel panel-danger" style="margin-top: 50px">
@@ -42,3 +43,17 @@
 </div>
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#submitBtn").click(function () {
+
+        var form = $(".needs-validation")
+
+        if (form[0].checkValidity() === false) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        form.addClass('was-validated');
+    })
+})
+</script>
