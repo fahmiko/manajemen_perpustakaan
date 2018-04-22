@@ -1,6 +1,6 @@
 <h4><small>Edit Buku</small></h4>
 <hr>
-<?php echo form_open_multipart('Buku/edit/'.$buku['id_buku']) ?>
+<?php echo form_open_multipart('Buku/edit_buku/'.$buku['id_buku']) ?>
 <div class="form-group">
    <label>Kategori</label>
    <select class="form-control" name="kategori">

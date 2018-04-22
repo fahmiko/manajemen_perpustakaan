@@ -15,7 +15,7 @@
     </ul>
     <ul class="sidebar-nav" id="sidebar">     
       <li><a href="<?php echo site_url('admin')?>">Home<span class="sub_icon glyphicon glyphicon-home"></span></a></li>
-      <li><a href="<?php echo site_url('admin/buku')?>">Buku<span class="sub_icon glyphicon glyphicon-book"></span></a></li>
+      <li><a href="<?php echo site_url('Buku')?>">Buku<span class="sub_icon glyphicon glyphicon-book"></span></a></li>
       <li><a href="#">Member<span class="sub_icon glyphicon glyphicon-user"></span></a></li>
       <li><a href="<?php echo site_url('admin/pinjaman')?>">Pinjaman<span class="sub_icon glyphicon glyphicon-asterisk"></span></a></li>
       <li><a href="<?php echo site_url('admin/logout')?>">Keluar<span class="sub_icon glyphicon glyphicon-log-out"></span></a></li>

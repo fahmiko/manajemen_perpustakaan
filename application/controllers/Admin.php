@@ -7,7 +7,6 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('data_admin');
 		$this->load->model('data_pinjaman');
-		$this->load->model('data_buku');
 	}
 
 	public function index()
@@ -58,7 +57,7 @@ class Admin extends CI_Controller {
 
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect('Admin','refresh');
+		redirect('admin','refresh');
 	}
 
 	public function pinjaman(){
@@ -67,15 +66,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/pinjaman', $data, FALSE);
 		$this->load->view('admin/footer');
 	}
-
-	public function buku(){
-		if(empty($this->session->userdata('username'))){
-			$this->load->view('admin/login');			
-		}else{
-			redirect('Buku/index');
-		}
-	}
-
 }
 
 /* End of file Admin.php */

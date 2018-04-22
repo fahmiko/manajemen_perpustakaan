@@ -20,7 +20,7 @@
             echo "<td>$data->penerbit</td>";
         	echo "<td>$data->gambar</td>";
             echo "<td><a href='".site_url().'Buku/edit_buku/'.$data->id_buku."' class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></a> ";
-            echo "<a href='".site_url().'Buku/delete/'.$data->id_buku."' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
+            echo "<a href='".site_url().'Buku/delete_buku/'.$data->id_buku."' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
         	echo "</tr>";
         } ?>
     </tbody>
@@ -33,12 +33,12 @@
 
 <button data-toggle="collapse" class="btn btn-pimary" style="margin-left: 15px;" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Data Kategori</button>
 
-<div id="demo" class="collapse container" style="position: fixed;">
+<div id="demo" class="collapse container" style="max-width: 100%;margin-bottom: 20%;">
 <br><br>
- <h4><small>Data Buku</small></h4>
+ <h4><small>Data Kategori</small></h4>
  <hr>
 <!-- Data tabel kategori -->
-<table class="table table-hover" id="myTable">
+<table class="table table-hover" id="tableKategori">
     <thead>
         <tr>
             <th>ID</th>
@@ -71,12 +71,12 @@
         <h4 class="modal-title">Tambah Buku</h4>
       </div>
       <div class="modal-body">
-      <?php echo form_open_multipart('Buku/tambah') ?>
+      <?php echo form_open_multipart('Buku/tambah_buku') ?>
              <div class="form-group">
                 <label>Kategori</label>
                 <select class="form-control" name="kategori">
                     <?php
-                        foreach ($buku->result() as $data){
+                        foreach ($kategori->result() as $data){
                             echo "<option value='$data->id_kategori'>$data->id_kategori | $data->nama</option>";
                         }
                     ?>

@@ -26,6 +26,10 @@ $(document).ready( function () {
     $('#myTable').DataTable();
 } );
 
+$(document).ready( function () {
+    $('#tableKategori').DataTable();
+} );
+
 </script>
 <script type="text/javascript">
 	$("#menu-toggle").click(function(e) {
