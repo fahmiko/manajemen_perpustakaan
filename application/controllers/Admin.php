@@ -18,9 +18,9 @@ class Admin extends CI_Controller {
 								 'akses'   => $this->session->userdata('akses'),
 								 'id_user' => $this->session->userdata('id_user')
 								);
-		$this->load->view('admin/header');
+		$this->load->view('templates/header');
 		$this->load->view('admin/beranda', $data, FALSE);
-		$this->load->view('admin/footer');
+		$this->load->view('templates/footer');
 		}
 	}
 
@@ -62,9 +62,9 @@ class Admin extends CI_Controller {
 
 	public function pinjaman(){
 		$data['pinjaman'] = $this->data_pinjaman->get_data_pinjaman();
-		$this->load->view('admin/header');
+		$this->load->view('templates/header');
 		$this->load->view('admin/pinjaman', $data, FALSE);
-		$this->load->view('admin/footer');
+		$this->load->view('templates/footer');
 	}
 }
 

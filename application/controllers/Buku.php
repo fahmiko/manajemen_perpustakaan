@@ -14,9 +14,9 @@ class Buku extends CI_Controller {
 	{
 		$data['buku'] = $this->data_perpustakaan->get_data_join('buku','kategori','id_kategori');
 		$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
-		$this->load->view('admin/header');
+		$this->load->view('templates/header');
 		$this->load->view('admin/buku', $data, FALSE);
-		$this->load->view('admin/footer');
+		$this->load->view('templates/footer');
 	}
 
 	//Fungsi tambah buku dan kategori
@@ -71,9 +71,9 @@ class Buku extends CI_Controller {
 			));
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('admin/header');
+			$this->load->view('templates/header');
 			$this->load->view('admin/edit_buku', $data, FALSE);
-			$this->load->view('admin/footer');
+			$this->load->view('templates/footer');
 		} else {
 			$config['upload_path'] = 'assets/img/';//direktori tempat upload file
 			$config['allowed_types'] = 'jpg|png|jpeg';//file yang diperbolehkan
@@ -114,9 +114,9 @@ class Buku extends CI_Controller {
 			));
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('admin/header');
+			$this->load->view('templates/header');
 			$this->load->view('admin/edit_kategori', $data, FALSE);
-			$this->load->view('admin/footer');
+			$this->load->view('templates/footer');
 		} else {
 			$data['input'] = array(
 			'nama' => $this->input->post('nama'),
