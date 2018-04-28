@@ -1,6 +1,6 @@
  <h4><small>Data Member</small></h4>
  <hr>
-<table class="table table-responsive">
+<table class="table table-responsive" id="myTable">
 	<thead>
         <tr>
             <th>ID</th>
