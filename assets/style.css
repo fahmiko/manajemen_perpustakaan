@@ -1,0 +1,88 @@
+/*@font-face{
+	font-family: "lato";
+	src: url('./assets/fonts/hut.ttf') ;
+}*/
+header{
+	background-color: #504f45;
+}
+ul{
+	list-style: none;
+	padding : 7% 0 3% 0;
+}
+li{
+	display: inline-block;
+	color: white; 	
+	padding-right: 3%;
+	font-size: 70%;
+	/*font-family: hut;*/
+}
+.img1{
+	width: 22%;
+	padding: 6% 0 6% 0;
+}
+.img2{
+	padding: 10% 0 21% 0;
+	background-image: url('./images/picture1.jpg');
+}
+.terjun{
+	color: white;
+	font-size: 150%;
+	padding: 6% 0 4% 0;
+}
+.back3{
+	background-color: #d35400 ; 
+}
+.most{
+	margin : 7% 0 5% 0;
+	font-size: 120%;
+	padding: 2% 2% 2% 2%;
+	background-color: #504f45;
+	color : white;
+}
+/*.ball{
+	margin : 11.5% 0 5% 0;
+	padding: 5% 8% 5% 8%;
+	background-color: #504f45;
+	width: 30%;
+}*/
+.space1{
+	margin-top: 10%;
+	margin-bottom: 4%;
+}
+.imgLine1{
+	margin-right: 3%;
+	width: 100%;
+}
+.Copyright{
+	margin-top: 10%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	color: white;
+	background-color: #504f45; 
+}
+.ilmiah{
+	color: #e67e22;
+	padding-top: 3%;
+}
+.nama{
+	margin-top: -5%;
+}
+.block1{
+	background-color: #ecf0f1;
+	margin : 10% 0 0 0;
+	padding-bottom: 3%;
+}
+.boom{
+	width: 35%;
+	margin-bottom: 9%;
+}
+.title2{
+	font-size: 190%;
+	margin : 15% 0 9% 0;
+}
+.more{
+	margin-top: 5%;
+	background-color: #504f45;
+	color: white;
+	border-radius: 0%;
+}

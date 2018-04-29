@@ -1,89 +1,149 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
-
-	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+	<title>Library</title>
+	<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <script src="assets/jquery/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<link href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet" type="text/css"> 	
 </head>
 <body>
-
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+<header>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+				<center><img class="img1" src="<?php echo base_url('assets/images/logo.png') ?>"></center>
+		</div>
+		<div class="col-lg-6">
+			<center>
+				<ul>
+					<li>HOME</li>
+					<li>BOOKS</li>
+					<li>LOAN</li>
+					<li>HELP</li>
+					<li>LOGIN</li>
+				</ul>
+			</center>			
+		</div>
 	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+</div>
+</header>
+<div class="img2">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="back3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<p class="terjun">PLUNGE INTO THE WONDERFUL<br>WORLD OF READING</p>
+			</div>
+		</div>
+	</div>
 </div>
 
+<div class="container space1">
+	<div class="row">
+
+		<div class="col-lg-4">
+			<p class="most" >MOST POPULAR</p>			
+		</div>
+		<div class="col-lg-8">
+
+		</div>
+<!-- 		<div class="col-lg-2">
+			<img class="ball" src="<?php echo base_url('assets/images/ball.png') ?>">
+		</div> -->
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b1.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b2.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b3.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b4.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b5.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b6.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b7.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+		<div class="col-lg-3">
+			<img class="imgLine1" src="<?php echo base_url('assets/uploads/b8.jpg') ?>">
+			<p class="ilmiah">ILMIAH SOSIAL</p>
+			<p class="nama"><i>Yunita .Winarto</i></p>
+		</div>
+	</div>	
+</div>
+<div class=" block1">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<p class="title2" align="center">Books</p>
+				<center><img class="boom" src="<?php echo base_url('assets/images/books.png') ?>"></center>
+				<!-- <p align="justify">LOREM IPSUM DOLOR SIT AMET JOS BLOSS</p> -->
+				<p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque mollitia, accusamus deserunt doloremque aliquam in.</p>
+				<center><p class="more btn">READ MORE</p></center>
+			</div>
+			<div class="col-lg-3">
+				<p class="title2" align="center">Loan</p>
+				<center><img class="boom" src="<?php echo base_url('assets/images/loan.png') ?>"></center>
+				<!-- <p align="justify">LOREM IPSUM DOLOR SIT AMET JOS BLOSS</p> -->
+				<p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque mollitia, accusamus deserunt doloremque aliquam in.</p>		
+				<center><p class="more btn">READ MORE</p></center>
+			</div>
+			<div class="col-lg-3">
+				<p class="title2" align="center">Members</p>
+				<center><img class="boom" src="<?php echo base_url('assets/images/members.png') ?>"></center>
+				<!-- <p align="justify">LOREM IPSUM DOLOR SIT AMET JOS BLOSS</p> -->
+				<p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque mollitia, accusamus deserunt doloremque aliquam in.</p>				
+				<center><p class="more btn">READ MORE</p></center>
+			</div>
+			<div class="col-lg-3">
+				<p class="title2" align="center">Help</p>
+				<center><img class="boom" src="<?php echo base_url('assets/images/help.png') ?>"></center>
+				<!-- <p align="justify">LOREM IPSUM DOLOR SIT AMET JOS BLOSS</p> -->
+				<p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi itaque mollitia, accusamus deserunt doloremque aliquam in.</p>				
+				<center><p class="more btn">READ MORE</p></center>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
+<footer>
+	<p class="Copyright" align="center">Copyright 2018 Libuno All rights reserved.</p>	
+</footer>
 </html>
