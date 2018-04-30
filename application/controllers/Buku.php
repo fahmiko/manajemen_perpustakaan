@@ -34,6 +34,9 @@ class Buku extends CI_Controller {
 			$data['input'] = array(
 				'id_kategori' => $this->input->post('kategori'),
 				'judul' => $this->input->post('judul'),
+				'tahun_terbit' => $this->input->post('tahun'),
+				'bahasa' => $this->input->post('bahasa'),
+				'pengarang' => $this->input->post('pengarang'),
 				'keterangan' => $this->input->post('keterangan'),
 				'penerbit' => $this->input->post('penerbit'),
 				'gambar' => $this->upload->data('file_name')
@@ -91,6 +94,9 @@ class Buku extends CI_Controller {
 				$data['input'] = array(
 					'id_kategori' => $this->input->post('kategori'),
 					'judul' => $this->input->post('judul'),
+					'tahun_terbit' => $this->input->post('tahun'),
+					'bahasa' => $this->input->post('bahasa'),
+					'pengarang' => $this->input->post('pengarang'),
 					'keterangan' => $this->input->post('keterangan'),
 					'penerbit' => $this->input->post('penerbit'),
 					'gambar' => $this->upload->data('file_name')

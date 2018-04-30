@@ -22,6 +22,18 @@
    <textarea class="form-control" name="keterangan"><?php echo $buku['keterangan'] ?></textarea>
 </div>
 <div class="form-group">
+    <label>Tahun</label>
+    <input type="text" class="form-control" name="tahun" required="" value="<?php echo $buku['tahun_terbit'] ?>">
+</div>
+<div class="form-group">
+    <label>Bahasa</label>
+    <input type="text" class="form-control" name="bahasa" required="" minlength="3" value="<?php echo $buku['bahasa'] ?>">
+</div>
+<div class="form-group">
+    <label>Pengarang</label>
+    <input type="text" class="form-control" name="pengarang" required="" minlength="5" value="<?php echo $buku['pengarang'] ?>">
+</div>
+<div class="form-group">
    <label>Penerbit</label>
    <input type="text" class="form-control" name="penerbit" value="<?php echo $buku['penerbit'] ?>">
 </div>
