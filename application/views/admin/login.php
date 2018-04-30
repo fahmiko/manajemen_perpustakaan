@@ -27,35 +27,7 @@
         </div>
     </div>
 </div>
-</header>
 
-
-<div class="super2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                
-            </div>
-            <div class="col-lg-4">
-                <form method="POST" action="<?php echo base_url('Admin/cek_login')?>" class="space6 faceLog">
-                    <center><h1  class="space3"><b>Login</b></h1></center>
-                    Username : <input class="form-control" type="text" name="username"><br>
-                    Password : <input class="form-control" type="password" name="password"><br>
-                    <center><input type="submit" id="submitBtn" class="btn btn3 superup2" name="login" value="LOGIN" ></center>
-                            <?php if(validation_errors()){?>
-                            <div class="panel panel-danger" style="margin-top: 50px">
-                                  <div class="panel-heading">Login Error</div>
-                                  <div class="panel-body"><?php echo validation_errors() ?></div>
-                            </div>
-                            <?php } ?>                    
-                </form>             
-            </div>
-            <div class="col-lg-4">
-                
-            </div>
-        </div>
-    </div>
-</div>
 
 <footer>
     <p class="Copyright2" align="center">Copyright 2018 Libuno All rights reserved.</p> 
