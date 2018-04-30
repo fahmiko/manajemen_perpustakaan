@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Halaman Login</title>
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<title>Login</title>
+    <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <script src="assets/jquery/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet" type="text/css">    
 </head>
 <body>
-<div>
-    <div class="modal-dialog" style="margin-bottom:0">
-        <div class="modal-content">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                    <?php echo form_open('Admin/cek_login', array('class' => 'needs-validation', 'novalidate' => '')) ?>
-                            <fieldset>
-                                <div class="input-group">
-                                	<span class="input-group-addon" id="basic-addon1">
-                                		<span class="glyphicon glyphicon-user"></span>
-                                	</span>
-                                    <input class="form-control" placeholder="Username" name="username" autofocus="">
-                                </div>
-                                <div class="input-group">
-                                	<span class="input-group-addon" id="basic-addon1">
-                                		<span class="glyphicon glyphicon-lock"></span>
-                                	</span>
-                                    <input class="form-control" placeholder="Password" name="password" type="password">
-                                </div><br><br>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <input type="submit" id="submitBtn" value="Login" class="btn btn-sm btn-success">
-                            </fieldset>
-                            <?php if(validation_errors()){?>
-							<div class="panel panel-danger" style="margin-top: 50px">
-							      <div class="panel-heading">Login Error</div>
-							      <div class="panel-body"><?php echo validation_errors() ?></div>
-							</div>
-							<?php } ?>
-                    </div>
-            </div>
+<header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+                <center><img class="img1" src="<?php echo base_url('assets/images/logo.png') ?>"></center>
+        </div>
+        <div class="col-lg-6">
+            <center>
+                <ul>
+                    <li>HOME</li>
+                    <li>BOOKS</li>
+                    <li>LOAN</li>
+                    <li>HELP</li>
+                    <li>LOGIN</li>
+                </ul>
+            </center>           
+        </div>
     </div>
 </div>
+</header>
+
+
+<div class="super2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                
+            </div>
+            <div class="col-lg-4">
+                <form method="POST" action="<?php echo base_url('Admin/cek_login')?>" class="space6 faceLog">
+                    <center><h1  class="space3"><b>Login</b></h1></center>
+                    Username : <input class="form-control" type="text" name="username"><br>
+                    Password : <input class="form-control" type="password" name="password"><br>
+                    <center><input type="submit" id="submitBtn" class="btn btn3 superup2" name="login" value="LOGIN" ></center>
+                            <?php if(validation_errors()){?>
+                            <div class="panel panel-danger" style="margin-top: 50px">
+                                  <div class="panel-heading">Login Error</div>
+                                  <div class="panel-body"><?php echo validation_errors() ?></div>
+                            </div>
+                            <?php } ?>                    
+                </form>             
+            </div>
+            <div class="col-lg-4">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p class="Copyright2" align="center">Copyright 2018 Libuno All rights reserved.</p> 
+</footer>
 </body>
 </html>
+
 <script type="text/javascript">
 $(document).ready(function () {
     $("#submitBtn").click(function () {
