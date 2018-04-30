@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Library</title>
+	<title>Libuno</title>
 	<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -56,9 +56,6 @@
 		<div class="col-lg-8">
 
 		</div>
-<!-- 		<div class="col-lg-2">
-			<img class="ball" src="<?php echo base_url('assets/images/ball.png') ?>">
-		</div> -->
 	</div>
 </div>
 <div class="container">
