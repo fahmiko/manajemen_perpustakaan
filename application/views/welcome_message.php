@@ -18,11 +18,11 @@
 		<div class="col-lg-6">
 			<center>
 				<ul>
-					<li>HOME</li>
-					<li>BOOKS</li>
-					<li>LOAN</li>
-					<li>HELP</li>
-					<li>LOGIN</li>
+                    <li><a class="list" href="<?php echo base_url('Welcome') ?>"> HOME </a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/books') ?>">BOOKS</a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/loan') ?>">LOAN</a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/help') ?>">HELP</a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/login') ?>">LOGIN</a></li>
 				</ul>
 			</center>			
 		</div>

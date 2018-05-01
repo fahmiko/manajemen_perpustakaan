@@ -127,3 +127,10 @@ li{
 .super2{
 	background-image: url('./images/library1.jpg');
 }
+.list{
+	color: white;
+}
+.list:hover{
+	color: white;
+	text-decoration: none;
+}

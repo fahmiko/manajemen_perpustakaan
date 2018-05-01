@@ -17,11 +17,11 @@
         <div class="col-lg-6">
             <center>
                 <ul>
-                    <li>HOME</li>
-                    <li>BOOKS</li>
-                    <li>LOAN</li>
-                    <li>HELP</li>
-                    <li>LOGIN</li>
+                    <li><a class="list" href="<?php echo base_url('Welcome') ?>"> HOME </a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/books') ?>">BOOKS</a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/loan') ?>">LOAN</a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/help') ?>">HELP</a></li>
+                    <li><a class="list" href="<?php echo base_url('Welcome/login') ?>">LOGIN</a></li>
                 </ul>
             </center>           
         </div>
@@ -41,9 +41,8 @@
                     Password : <input class="form-control" type="password" name="password"><br>
                     <center><input type="submit" id="submitBtn" class="btn btn3 superup2" name="login" value="LOGIN" ></center>
                             <?php if(validation_errors()){?>
-                            <div class="panel panel-danger" style="margin-top: 50px">
-                                  <div class="panel-heading">Login Error</div>
-                                  <div class="panel-body"><?php echo validation_errors() ?></div>
+                            <center><div class="panel panel-danger" style="margin-top: 4%"></center>
+                            <center><div class="panel-body"><?php echo validation_errors() ?></div></center>
                             </div>
                             <?php } ?>                    
                 </form>             
