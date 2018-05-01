@@ -91,6 +91,18 @@
                 <textarea class="form-control" name="keterangan" required="" minlength="15"></textarea>
              </div>
              <div class="form-group">
+                <label>Tahun</label>
+                <input type="text" class="form-control" name="tahun" required="">
+             </div>
+             <div class="form-group">
+                <label>Bahasa</label>
+                <input type="text" class="form-control" name="bahasa" required="" minlength="3">
+             </div>
+             <div class="form-group">
+                <label>Pengarang</label>
+                <input type="text" class="form-control" name="pengarang" required="" minlength="5">
+             </div>
+             <div class="form-group">
                 <label>Penerbit</label>
                 <input type="text" class="form-control" name="penerbit" required="" minlength="5">
              </div>
