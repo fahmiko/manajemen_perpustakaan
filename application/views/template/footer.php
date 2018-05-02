@@ -2,8 +2,6 @@
     </div>
 </div>
 <script src="<?php echo base_url().'assets/admin/' ?>vendor/jquery/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?php echo base_url().'assets/admin/' ?>vendor/popper.js/popper.min.js"></script>
 <script src="<?php echo base_url().'assets/admin/' ?>vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url().'assets/admin/' ?>vendor/chart.js/chart.min.js"></script>

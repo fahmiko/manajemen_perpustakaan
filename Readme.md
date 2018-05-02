@@ -42,6 +42,11 @@ Clone Aplikasi
 
 [![Login](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/login.jpg "Login")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/login.jpg "Login")
 
-- Tabel Buku dan Kategori
+- Tabel Pinjaman
 
-[![Tabel Buku](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/buku.jpg "Tabel Buku")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/buku.jpg "Tabel Buku")
+[![Tabel Pinjaman](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/pinjaman.jpg "Tabel Pinjaman")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/pinjaman.jpg "Tabel Pinjaman")
+
+
+- Halaman Beranda
+
+[![Beranda](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/beranda.jpg "Beranda")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/beranda.jpg "Beranda")

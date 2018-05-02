@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Management Perpustakaan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <title>Carbon - Admin Template</title>
     <link rel="stylesheet" href="<?php echo base_url().'assets/admin/' ?>vendor/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="<?php echo base_url().'assets/admin/' ?>vendor/font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'assets/admin/' ?>css/styles.css">
@@ -19,7 +17,7 @@
         </a>
 
         <a class="navbar-brand" href="#">
-            Perpustakaan | Admin
+            <img src="<?php echo base_url().'assets/admin/' ?>imgs/logo.png" alt="logo">
         </a>
 
         <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
@@ -30,7 +28,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="small ml-1 d-md-down-none"><?php echo $this->session->userdata('username') ?></span>
+                    <span class="small ml-1 d-md-down-none">John Smith</span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
@@ -55,7 +53,7 @@
                     <li class="nav-title">Navigation</li>
 
                     <li class="nav-item">
-                        <a href="<?php echo base_url('admin') ?>" class="nav-link active">
+                        <a href="index.html" class="nav-link active">
                             <i class="icon icon-speedometer"></i> Dashboard
                         </a>
                     </li>
@@ -73,13 +71,13 @@
 
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a href="<?php echo base_url('member') ?>" class="nav-link">
+                                <a href="buttons.html" class="nav-link">
                                     <i class="icon icon-people"></i> Daftar Member
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" data-toggle="modal" data-target="#modal-member"  class="nav-link">
+                                <a href="alerts.html" class="nav-link">
                                     <i class="fa fa-plus"></i> Tambah Member
                                 </a>
                             </li>
@@ -93,8 +91,8 @@
 
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a href="<?php echo base_url('admin/pinjaman') ?>" class="nav-link">
-                                    <i class="icon icon-wallet"></i> Daftar Pinjaman
+                                <a href="buttons.html" class="nav-link">
+                                    <i class="icon icon-people"></i> Daftar Pinjaman
                                 </a>
                             </li>
 
@@ -136,44 +134,3 @@
                 </ul>
             </nav>
         </div>
-<!-- Modal tambah Member  -->
-<div class="modal fade" id="modal-member" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tambah Member</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa fa-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Nama" required="">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa fa-address-card"></i></span>
-                    </div>
-                    <textarea class="form-control" rows="6" placeholder="Alamat" required=""></textarea>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa fa-graduation-cap"></i></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Instansi" required="">
-                    <div class="invalid-feedback">Isi instansi dulu</div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-

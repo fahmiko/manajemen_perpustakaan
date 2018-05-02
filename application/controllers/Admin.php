@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('data_admin');
 		$this->load->model('data_pinjaman');
+		$this->load->model('data_perpustakaan');
 	}
 
 	public function index()
@@ -18,6 +19,10 @@ class Admin extends CI_Controller {
 								 'akses'   => $this->session->userdata('akses'),
 								 'id_user' => $this->session->userdata('id_user')
 								);
+		$data['member'] = $this->data_perpustakaan->get_data('member');
+		$data['buku'] = $this->data_perpustakaan->get_data('buku');
+		$data['pinjaman'] = $this->data_perpustakaan->get_data('pinjaman');
+		$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
 		$this->load->view('templates/header');
 		$this->load->view('admin/beranda', $data, FALSE);
 		$this->load->view('templates/footer');
