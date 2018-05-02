@@ -64,13 +64,6 @@ class Admin extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('admin','refresh');
 	}
-
-	public function pinjaman(){
-		$data['pinjaman'] = $this->data_pinjaman->get_data_pinjaman();
-		$this->load->view('templates/header');
-		$this->load->view('admin/pinjaman', $data, FALSE);
-		$this->load->view('templates/footer');
-	}
 }
 
 /* End of file Admin.php */

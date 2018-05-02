@@ -6,9 +6,9 @@ Sistem menajemen perpustakaan adalah aplikasi sistem website perpustakaan, websi
 
 **Fitur Aplikasi**
 > - Halaman Admin(CRUD)
-- Halaman USER
-- Meminjam Buku
-- Mengembalikan Buku
+> - Halaman USER
+> - Meminjam Buku
+> - Mengembalikan Buku
 
 
 ------------
@@ -40,7 +40,7 @@ Clone Aplikasi
 **Tampilan Aplikasi**
 - Halaman Login
 
-[![Login](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/login.jpg "Login")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/login.jpg "Login")
+[![Login](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/login2.jpg "Login")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/login2.jpg "Login")
 
 - Tabel Pinjaman
 

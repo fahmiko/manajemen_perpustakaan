@@ -40,7 +40,7 @@
                         <i class="fa fa-wrench"></i> Settings
                     </a>
 
-                    <a href="#" class="dropdown-item">
+                    <a href="<?php echo site_url('admin/logout') ?>" class="dropdown-item">
                         <i class="fa fa-lock"></i> Logout
                     </a>
                 </div>
@@ -53,27 +53,26 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-title">Navigation</li>
-
                     <li class="nav-item">
-                        <a href="<?php echo base_url('admin') ?>" class="nav-link active">
+                        <a href="<?php echo site_url('admin') ?>" class="nav-link <?php echo ($this->uri->segment(1) == "admin") ? "active" : "" ?>">
                             <i class="icon icon-speedometer"></i> Dashboard
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link  <?php echo ($this->uri->segment(1) == "buku") ? "active" : "" ?>">
                             <i class="fa fa-book"></i> Buku 
                         </a>
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a href="#" class="nav-link nav-dropdown-toggle">
+                        <a href="#" class="nav-link nav-dropdown-toggle <?php echo ($this->uri->segment(1) == "member") ? "active" : "" ?> ">
                             <i class="fa fa-user"></i> Member <i class="fa fa-caret-left"></i>
                         </a>
 
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a href="<?php echo base_url('member') ?>" class="nav-link">
+                                <a href="<?php echo site_url('member') ?>" class="nav-link">
                                     <i class="icon icon-people"></i> Daftar Member
                                 </a>
                             </li>
@@ -87,13 +86,13 @@
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a href="#" class="nav-link nav-dropdown-toggle">
+                        <a href="#" class="nav-link nav-dropdown-toggle <?php echo ($this->uri->segment(1) == "pinjaman") ? "active" : "" ?>">
                             <i class="icon icon-graph"></i> Pinjaman <i class="fa fa-caret-left"></i>
                         </a>
 
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a href="<?php echo base_url('admin/pinjaman') ?>" class="nav-link">
+                                <a href="<?php echo site_url('pinjaman') ?>" class="nav-link">
                                     <i class="icon icon-wallet"></i> Daftar Pinjaman
                                 </a>
                             </li>
