@@ -89,6 +89,7 @@ $config['language']	= 'english';
 | See http://php.net/htmlspecialchars for a list of supported charsets.
 |
 */
+date_default_timezone_set('Asia/Jakarta');
 $config['charset'] = 'UTF-8';
 
 /*

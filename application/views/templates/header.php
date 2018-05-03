@@ -98,13 +98,13 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="alerts.html" class="nav-link">
+                                <a href="<?php echo site_url('pinjaman/tambah_pinjaman') ?>" class="nav-link">
                                     <i class="fa fa-plus"></i> Tambah Pinjaman
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="alerts.html" class="nav-link">
+                                <a href="<?php echo site_url('pinjaman/pengembalian') ?>" class="nav-link">
                                     <i class="fa fa-exchange-alt"></i> Pengembalian
                                 </a>
                             </li>

@@ -15,7 +15,7 @@
                         <th>Buku</th>
                         <th>Pinjam</th>
                         <th>Kembali</th>
-                        <th>Denda</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,9 +25,13 @@
                     	echo "<td>$data->nama</td>";
                     	echo "<td>$data->judul</td>";
                     	echo "<td>$data->tgl_pinjam</td>";
-                    	echo "<td>$data->tgl_kembali</td>";
-                    	echo "<td>$data->denda</td>";
-                    	echo "</tr>";
+                    	echo "<td>$data->tgl_kembali</td><td>";
+                    	if ($data->status == "dipinjam" ){
+                            echo "<span class='badge badge-warning'>dipinjam</span>'"; 
+                        }else{
+                            echo "<span class='badge badge-success'>kembali</span>";
+                        }
+                    	echo "</td></tr>";
                     } ?>
                 </tbody>
             </table>

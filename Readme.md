@@ -44,7 +44,7 @@ Clone Aplikasi
 
 - Tabel Pinjaman
 
-[![Tabel Pinjaman](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/pinjaman.jpg "Tabel Pinjaman")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/pinjaman.jpg "Tabel Pinjaman")
+[![Tabel Pinjaman](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/pinjaman2.jpg "Tabel Pinjaman")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/pinjaman2.jpg "Tabel Pinjaman")
 
 
 - Halaman Beranda
@@ -55,3 +55,8 @@ Clone Aplikasi
 - Halaman Buku & Kategori
 
 [![Buku](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/buku_kategori.jpg "Buku")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/buku_kategori.jpg "Buku")
+
+
+- Pengembalian
+
+[![Kembali](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/kembali.jpg "Kembali")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/kembali.jpg "Kembali")
