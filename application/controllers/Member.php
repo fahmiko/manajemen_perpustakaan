@@ -19,12 +19,11 @@ class Member extends CI_Controller {
 	}
 
 	public function tambah_member(){
+		$data['member'] = $this->data_perpustakaan->get_data('member');
 		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[5]|is_unique[member.nama]');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required|min_length[5]');
-		$this->form_validation->set_rules('instansi', 'Instansi', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header');
-			$this->load->view('admin/tambah_member');
+			$this->load->view('admin/member',$data);
 			$this->load->view('templates/footer');
 		} else {
 			$data['input'] = array(
@@ -54,7 +53,7 @@ class Member extends CI_Controller {
 				'instansi' => $this->input->post('instansi')
 			);
 			$this->data_perpustakaan->set_data('member','id_member',$data['input'], $id);
-			redirect('Member','refresh');
+			redirect('member','refresh');
 		}
 	}
 

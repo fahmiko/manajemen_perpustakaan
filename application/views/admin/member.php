@@ -25,12 +25,26 @@
                           echo "<td>$data->alamat</td>";
                         	echo "<td>$data->instansi</td>";
                           echo "<td>
-                                <a class='btn btn-primary btn-sm' href='Member/edit_member/".$data->id_member."'><span class='fa fa-edit'></span></a>
-                                <a class='btn btn-danger btn-sm' href='Member/delete_member/".$data->id_member."'><span class='fa fa-trash'></span></a>
+                                <a class='btn btn-primary btn-sm' href='member/edit_member/".$data->id_member."'><span class='fa fa-edit'></span></a>
+                                <a class='btn btn-danger btn-sm' href='member/delete_member/".$data->id_member."'><span class='fa fa-trash' onclick=\"return confirm('ingin hapus member ?')\"></span></a>
                           </td>";
                         } ?>
                     </tbody>
                 </table>
+                <div class="container-fluid">
+                    <?php
+                        if(validation_errors()){
+                            echo '
+                            <div class="alert alert-dismissible alert-danger" style="margin-top: 50px">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                <div class="panel-heading">Panel Info</div><hr>
+                                <div class="panel-body">'.validation_errors().'</div>
+                            </div>';
+                        }
+                    ?>
+                </div>
             </div>
         </div>
     </div>

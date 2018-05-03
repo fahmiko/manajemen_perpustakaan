@@ -10,7 +10,6 @@
 <script src="<?php echo base_url().'assets/admin/' ?>js/carbon.js"></script>
 <script src="<?php echo base_url().'assets/admin/' ?>js/demo.js"></script>
 <script type="text/javascript">
-	
 $(document).ready( function () {
     $('#myTable').DataTable();
 } );
@@ -25,6 +24,20 @@ $(document).ready( function () {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
 });
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $("#submitBtn").click(function () {
+
+        var form = $(".needs-validation")
+
+        if (form[0].checkValidity() === false) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+        form.addClass('was-validated');
+    })
+})
 </script>
 </body>
 </html>

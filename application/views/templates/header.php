@@ -145,34 +145,35 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            <?php echo form_open_multipart('member/tambah_member', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Nama" required="">
+                    <input type="text" name="nama" class="form-control" placeholder="Nama" required="" minlength="5">
+                    <div class="invalid-feedback">Isi Nama dulu</div>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-address-card"></i></span>
                     </div>
-                    <textarea class="form-control" rows="6" placeholder="Alamat" required=""></textarea>
+                    <textarea class="form-control" name="alamat" placeholder="Alamat" required="" minlength="5"></textarea>
+                    <div class="invalid-feedback">Isi Alamat dulu</div>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-graduation-cap"></i></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Instansi" required="">
+                    <input type="text" name="instansi" class="form-control" placeholder="Instansi" required="" minlength="3">
                     <div class="invalid-feedback">Isi instansi dulu</div>
                 </div>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Save changes</button>
             </div>
+            <?php echo form_close(); ?>
         </div>
     </div>
 </div>
-
