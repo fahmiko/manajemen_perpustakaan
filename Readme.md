@@ -50,3 +50,8 @@ Clone Aplikasi
 - Halaman Beranda
 
 [![Beranda](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/beranda.jpg "Beranda")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/beranda.jpg "Beranda")
+
+
+- Halaman Buku & Kategori
+
+[![Buku](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/buku_kategori.jpg "Buku")](https://raw.githubusercontent.com/fahmiko/manajemen_perpustakaan/master/assets/img/review/buku_kategori.jpg "Buku")

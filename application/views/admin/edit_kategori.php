@@ -1,5 +1,12 @@
-<h4><small>Edit kategori</small></h4>
-<hr>
+ <div class="content">
+ <div class="container-fluid">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="card">
+        <div class="card-header bg-light">
+            Edit Kategori
+        </div>
+<div class="card-body">
 <?php echo form_open_multipart('Buku/edit_kategori/'.$kategori['id_kategori']) ?>
 <div class="form-group">
    <label>Nama</label>
@@ -11,12 +18,21 @@
 </div>
 <input type="submit" class="btn btn-primary" value="Edit">
 <hr>
- <?php
-    if(validation_errors()){
-        echo '
-        <div class="panel panel-danger" style="margin-top: 50px">
-            <div class="panel-heading">Panel Info</div>
-            <div class="panel-body">'.validation_errors().'</div>
-        </div>';
-    }
- ?>
+<hr>
+<div class="container-fluid">
+                    <?php
+                        if(validation_errors()){
+                            echo '
+                            <div class="alert alert-dismissible alert-danger" style="margin-top: 50px">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                <div class="panel-heading">Panel Info</div><hr>
+                                <div class="panel-body">'.validation_errors().'</div>
+                            </div>';
+                        }
+                    ?>
+                </div>
+</div></div>
+</div></div>
+</div></div>

@@ -1,18 +1,19 @@
-<h4><small>Edit Buku</small></h4>
-<hr>
+ <div class="content">
+ <div class="container-fluid">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="card">
+        <div class="card-header bg-light">
+            Edit Buku
+        </div>
+<div class="card-body">
 <?php echo form_open_multipart('Buku/edit_buku/'.$buku['id_buku']) ?>
+<input type="hidden" name="gambar" value="<?php echo $buku['gambar'] ?>">
 <div class="form-group">
    <label>Kategori</label>
-   <select class="form-control" name="kategori">
-       <?php
-           foreach ($kategori->result() as $data){
-               echo "<option value='$data->id_kategori'>$data->id_kategori | $data->nama</option>";
-           }
-       ?>
-   </select>
+   <span class="input-group-addon" id="basic-addon1">Kategori</span>
+  <?php echo form_dropdown('kategori', $dropdown, set_value('kategori',$buku['id_kategori']), 'class="form-control" required' ); ?>
 </div>
-<input type="hidden" name="id" value="<?php echo $buku['id_buku'] ?>">
-<input type="hidden" name="gambar" value="<?php echo $buku['gambar'] ?>">
 <div class="form-group">
    <label>Judul</label>
    <input type="text" class="form-control" name="judul" value="<?php echo $buku['judul'] ?>">
@@ -39,16 +40,24 @@
 </div>
 <div class="form-group">
    <label>Gambar</label>
-   <input type="file" name="userfile">
+   <input type="file" name="userfile" required="">
 </div>
 <input type="submit" class="btn btn-primary" value="Edit">
 <hr>
- <?php
-    if(validation_errors()){
-        echo '
-        <div class="panel panel-danger" style="margin-top: 50px">
-            <div class="panel-heading">Panel Info</div>
-            <div class="panel-body">'.validation_errors().'</div>
-        </div>';
-    }
- ?>
+<div class="container-fluid">
+                    <?php
+                        if(validation_errors()){
+                            echo '
+                            <div class="alert alert-dismissible alert-danger" style="margin-top: 50px">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                <div class="panel-heading">Panel Info</div><hr>
+                                <div class="panel-body">'.validation_errors().'</div>
+                            </div>';
+                        }
+                    ?>
+                </div>
+</div></div>
+</div></div>
+</div></div>

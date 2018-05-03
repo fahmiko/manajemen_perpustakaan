@@ -4,7 +4,7 @@
  <div class="col-md-12">
  <div class="card">
         <div class="card-header bg-light">
-            Tabel Member
+            Edit Member
         </div>
 <div class="card-body">
 <?php echo form_open_multipart( 'member/edit_member/'.$member['id_member'], array('class' => 'needs-validation', 'novalidate' => '') ); ?>

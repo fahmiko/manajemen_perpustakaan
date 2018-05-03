@@ -60,7 +60,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link  <?php echo ($this->uri->segment(1) == "buku") ? "active" : "" ?>">
+                        <a href="<?php echo site_url('buku') ?>" class="nav-link  <?php echo ($this->uri->segment(1) == "buku") ? "active" : "" ?>">
                             <i class="fa fa-book"></i> Buku 
                         </a>
                     </li>

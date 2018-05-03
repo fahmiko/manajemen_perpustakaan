@@ -39,6 +39,15 @@ class Data_perpustakaan extends CI_Model {
 			$query = $this->db->get();
 			return $query;
 	}
+
+	public function generate_dropdown($table, $column_id, $column_name){
+		$data = $this->db->select('*')->from($table)->get();
+		$data_select[''] = "Select One";
+		foreach ($data->result_array() as $row) {
+			$data_select[$row[$column_id]] = $row[$column_name];
+		}
+		return $data_select;
+	}
 }
 
 /* End of file data_perpustakaan.php */

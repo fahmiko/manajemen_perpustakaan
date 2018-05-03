@@ -14,6 +14,7 @@ class Buku extends CI_Controller {
 	{
 		$data['buku'] = $this->data_perpustakaan->get_data_join('buku','kategori','id_kategori');
 		$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
+		$data['dropdown'] = $this->data_perpustakaan->generate_dropdown('kategori','id_kategori','nama');
 		$this->load->view('templates/header');
 		$this->load->view('admin/buku', $data, FALSE);
 		$this->load->view('templates/footer');
@@ -23,7 +24,7 @@ class Buku extends CI_Controller {
 	public function tambah_buku(){
 		$config['upload_path'] = 'assets/img/';//direktori tempat upload file
 		$config['allowed_types'] = 'jpg|png|jpeg';//file yang diperbolehkan
-			
+		
 		$this->load->library('upload', $config);//menyimpan konfigurasi
 			
 		if ( ! $this->upload->do_upload('userfile')){//Jika file gagal terupload
@@ -58,6 +59,7 @@ class Buku extends CI_Controller {
 	//Fungsi edit buku dan kategori
 
 	public function edit_buku(){
+		$data['dropdown'] = $this->data_perpustakaan->generate_dropdown('kategori','id_kategori','nama');
 		$id = $this->uri->segment(3);
 		$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
 		$data['buku'] = $this->data_perpustakaan->get_data_by_id('buku', 'id_buku', $id);
@@ -72,7 +74,9 @@ class Buku extends CI_Controller {
 		$this->form_validation->set_rules('penerbit', 'Penerbit', 'required',
 				array('required' => "Penerbit kosong"
 			));
-
+		$this->form_validation->set_rules('tahun', 'Tahun', 'required|min_length[4]|max_length[4]');
+		$this->form_validation->set_rules('bahasa', 'Bahasa', 'required');
+		$this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header');
 			$this->load->view('admin/edit_buku', $data, FALSE);
