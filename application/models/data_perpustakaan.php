@@ -40,6 +40,14 @@ class Data_perpustakaan extends CI_Model {
 			return $query;
 	}
 
+	public function get_data_sort($table, $column){
+		$query = $this->db->select('*')
+				 		  ->from($table)
+				 		  ->order_by($column, 'asc')
+				 		  ->get();
+		return $query;
+	}
+	
 	public function generate_dropdown($table, $column_id, $column_name){
 		$data = $this->db->select('*')->from($table)->get();
 		$data_select[''] = "Select One";

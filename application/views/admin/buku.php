@@ -82,7 +82,7 @@
                                      <div class="form-group">
                                         <label>Penerbit</label>
                                         <input type="text" class="form-control" name="penerbit" required="" minlength="5">
-                                        <div class="invalid-feedback">Isi Penerbu</div>
+                                        <div class="invalid-feedback">Isi Penerbit</div>
                                      </div>
                                      <div class="form-group">
                                         <label>Gambar</label>
@@ -122,10 +122,12 @@
                             <div class="form-group">
                                <label>Nama</label>
                                <input type="text" class="form-control" name="nama" required="" minlength="5" >
+                               <div class="invalid-feedback">Check input</div>
                             </div>
                             <div class="form-group">
                                <label>Keterangan</label>
                                <textarea class="form-control" name="keterangan" required="" minlength="15"></textarea>
+                               <div class="invalid-feedback">Check Input</div>
                             </div>
                             <div class="form-group">
                                <input type="submit" class="btn btn-primary" value="Tambah">

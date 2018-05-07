@@ -12,10 +12,43 @@ class Pinjaman extends CI_Controller {
 		$this->load->helper(array('date','form','url'));
 		$this->load->library('form_validation');
 		if(empty($this->session->userdata('username'))){
-			$this->load->view('admin/login');			
+			redirect('admin','refresh');			
 		}
 	}
 	
+	public function test_data(){
+		$this->load->library('table');
+		$data['book'] = $this->data_pinjaman->get_popular_book();
+		$data['member'] = $this->data_pinjaman->get_popular_member();
+		echo "Buku yang sering dipinjam<br>";
+		echo "<table>
+				<tr><td>ID</td>
+					<td>Judul</td>
+					<td>Total Pinjam</td>
+				</tr>";
+
+		foreach ($data['book']->result() as $show) {
+			echo "<tr><td>";
+			echo $show->id_buku."</td><td>";
+			echo $show->judul."</td><td>";
+			echo $show->total."</td></tr>";
+		}
+		echo "</table>";
+		echo "<br>Member yang sering meminjam<br>";
+		echo "<table>
+				<tr><td>ID</td>
+					<td>Judul</td>
+					<td>Total Pinjam</td>
+				</tr>";
+
+		foreach ($data['member']->result() as $show) {
+			echo "<tr><td>";
+			echo $show->id_member."</td><td>";
+			echo $show->nama."</td><td>";
+			echo $show->total."</td></tr>";
+		}
+		echo "</table>";
+	}
 	public function index()
 	{
 		$data['pinjaman'] = $this->data_pinjaman->get_data_pinjaman();

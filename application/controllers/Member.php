@@ -9,7 +9,7 @@ class Member extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('form_validation');
 		if(empty($this->session->userdata('username'))){
-			$this->load->view('admin/login');			
+			redirect('admin','refresh');			
 		}
 	}
 

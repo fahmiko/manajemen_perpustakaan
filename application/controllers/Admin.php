@@ -15,17 +15,17 @@ class Admin extends CI_Controller {
 		if(empty($this->session->userdata('username'))){
 			$this->load->view('admin/login');			
 		}else{
-		$data['session'] = array('username' => $this->session->userdata('username'),
-								 'akses'   => $this->session->userdata('akses'),
-								 'id_user' => $this->session->userdata('id_user')
-								);
-		$data['member'] = $this->data_perpustakaan->get_data('member');
-		$data['buku'] = $this->data_perpustakaan->get_data('buku');
-		$data['pinjaman'] = $this->data_perpustakaan->get_data('pinjaman');
-		$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
-		$this->load->view('templates/header');
-		$this->load->view('admin/beranda', $data, FALSE);
-		$this->load->view('templates/footer');
+			$data['session'] = array('username' => $this->session->userdata('username'),
+									 'akses'   => $this->session->userdata('akses'),
+									 'id_user' => $this->session->userdata('id_user')
+									);
+			$data['member'] = $this->data_perpustakaan->get_data('member');
+			$data['buku']   = $this->data_perpustakaan->get_data('buku');
+			$data['pinjaman'] = $this->data_perpustakaan->get_data('pinjaman');
+			$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
+			$this->load->view('templates/header');
+			$this->load->view('admin/beranda', $data, FALSE);
+			$this->load->view('templates/footer');
 		}
 	}
 
