@@ -3,8 +3,8 @@
 		<div class="col-lg-4">
 			<p class="most" >BOOKS</p>			
 		</div>
-		<div class="col-lg-3">
-			<?php echo form_open('welcome/books'); ?>
+		<!-- <div class="col-lg-3">
+			<?php //echo form_open('welcome/books'); ?>
 			<select name="sorting" class="form-control" style="margin-top: 30px">
 				<option value="judul">Judul</option>
 				<option value="tahun_terbit">Tahun</option>
@@ -14,8 +14,8 @@
 		</div>
 		<div class="col-lg-3" style="margin-top: 30px">
 			<button class="btn btn-default">Urutkan</button>
-			<?php echo form_close(); ?>
-		</div>
+			<?php //echo form_close(); ?>
+		</div> -->
 	</div>
 </div>
 <div class="container">
@@ -32,4 +32,7 @@
 
 		<?php } ?>
 	</div>	
+</div>
+<div class="container" align="center">
+		<?php echo $pagination ?>
 </div>

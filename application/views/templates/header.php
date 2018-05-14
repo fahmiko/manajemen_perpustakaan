@@ -111,7 +111,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-title">More</li>
+<!--                     <li class="nav-title">More</li>
 
                     <li class="nav-item nav-dropdown">
                         <a href="#" class="nav-link nav-dropdown-toggle">
@@ -131,7 +131,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
         </div>

@@ -56,6 +56,18 @@ class Data_perpustakaan extends CI_Model {
 		}
 		return $data_select;
 	}
+
+	public function get_data_pagination($table, $limit, $offset){
+		$query = $this->db->select("*")
+				->from($table)
+				->limit($limit, $offset)
+				->get();
+		return $query;
+	}
+	
+	public function get_total($table){
+		return $this->db->count_all($table);
+	}
 }
 
 /* End of file data_perpustakaan.php */

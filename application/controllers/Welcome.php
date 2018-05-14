@@ -23,6 +23,8 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('data_pinjaman');
 		$this->load->model('data_perpustakaan');
+		$this->load->helper('konfigurasi');
+		$this->load->library('pagination');
 	}
 
 	public function index()
@@ -43,11 +45,16 @@ class Welcome extends CI_Controller {
 
 	public function books()
 	{
-		if ($this->input->post('sorting') != null) {
-			$data['buku'] = $this->data_perpustakaan->get_data_sort('buku', $this->input->post('sorting'));
-		}else{
-			$data['buku'] = $this->data_perpustakaan->get_data('buku');
-		}
+		$limit_per_page = 4;
+		$start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
+		$total_records = $this->data_perpustakaan->get_total('buku');
+		$data["buku"] = $this->data_perpustakaan->get_data_pagination('buku' , $limit_per_page, $start_index);
+		
+		$config = paging_config('welcome/books/',$total_records,$limit_per_page);
+		$this->pagination->initialize($config);
+			
+		// Buat link pagination
+		$data["pagination"] = $this->pagination->create_links();
 		$this->load->view('users/header');
 		$this->load->view('users/buku', $data);
 		$this->load->view('users/footer');

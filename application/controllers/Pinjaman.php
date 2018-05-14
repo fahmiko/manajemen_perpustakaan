@@ -9,7 +9,7 @@ class Pinjaman extends CI_Controller {
 		$this->load->model('data_admin');
 		$this->load->model('data_pinjaman');
 		$this->load->model('data_perpustakaan');
-		$this->load->helper(array('date','form','url'));
+		$this->load->helper(array('date','form','url','my'));
 		$this->load->library('form_validation');
 		if(empty($this->session->userdata('username'))){
 			redirect('admin','refresh');			
@@ -49,6 +49,7 @@ class Pinjaman extends CI_Controller {
 		}
 		echo "</table>";
 	}
+
 	public function index()
 	{
 		$data['pinjaman'] = $this->data_pinjaman->get_data_pinjaman();
@@ -135,6 +136,16 @@ class Pinjaman extends CI_Controller {
 		);	
 		$this->data_perpustakaan->set_data('pinjaman', 'id_pinjaman', $data['input'], $id);
 		redirect('pinjaman','refresh');
+	}
+
+	public function json_pinjaman(){
+		$data = $this->data_pinjaman->get_data_pinjaman();
+		echo json_encode(array('data' => $data->result()));
+	}
+
+	public function json_pinjaman_by_id($id){
+		$data = $this->data_pinjaman->get_pinjaman_by_id($id);
+		echo json_encode($data->row_array());
 	}
 
 }

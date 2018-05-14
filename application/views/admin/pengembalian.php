@@ -71,7 +71,7 @@ if($pinjam == null){
                 <div class="form-group">
                     <p class="font-weight-bold mb-4">Tanggal Kembali</p>
                     <input type="text" class="form-control" readonly="" value="<?php
-                        echo $data->tgl_kembali;
+                        echo tgl_indo($data->tgl_kembali);
                     ?>">
                 </div>
                 <p class="font-weight-bold mb-4">Denda Per Hari</p>
@@ -81,7 +81,7 @@ if($pinjam == null){
                 <div class="form-group">
                     <p class="font-weight-bold mb-4">Dikembalikan</p>
                     <input type="text" class="form-control" readonly="" value="<?php
-                        echo date('Y-m-d');
+                        echo tgl_indo(date('Y-m-d'));
                     ?>">
                 </div>
                     <p class="font-weight-bold mb-4">Keterlambatan(hari)</p>

@@ -27,6 +27,16 @@ class Data_pinjaman extends CI_Model {
 			return $query;
 		}
 
+		public function get_pinjaman_by_id($id = 0){
+			$this->db->select('*');
+			$this->db->from('pinjaman');
+			$this->db->join('member', 'pinjaman.id_member = member.id_member');
+			$this->db->join('buku', 'pinjaman.id_buku = buku.id_buku');
+			$this->db->where('id_pinjaman', $id);
+			$query = $this->db->get();
+			return $query;
+		}
+
 		public function get_popular_book(){
 			//Query untuk Menampilkan rank buku yang banyak dipinjam
 			$this->db->select(array('buku.*',"count(pinjaman.id_buku) as total"));

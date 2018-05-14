@@ -36,8 +36,56 @@ $(document).ready(function () {
             event.stopPropagation()
         }
         form.addClass('was-validated');
-    })
-})
+    });
+});
+</script>
+<!-- Pinjaman Jquery -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#tb_pinjaman').DataTable({
+            "ajax":"<?php echo site_url('pinjaman/json_pinjaman') ?>",
+            "columns":[
+                {"data":"id_pinjaman"},
+                {"data":"nama"},
+                {"data":"judul"},
+                {"data":"tgl_pinjam"},
+                {"data":"tgl_kembali"},
+                {
+                    "data":null,
+                    "render":function(data){
+                       return (data.status == 'dipinjam') ? "<span class='badge badge-warning'>dipinjam</span>" : "<span class='badge badge-success'>kembali</span>"
+                    }
+                },
+                {
+                    "data":null,
+                    "render":function(data){
+                        return "<a class='btn btn-default btn-xs' onclick='(invoice("+data.id_pinjaman+"))'><span class='fa fa-print'></span> tampil</a>"
+                    }
+                },
+            ],
+        });
+    });
+
+function invoice(id){
+    $.ajax({
+        url: "<?php echo site_url('pinjaman/json_pinjaman_by_id/') ?>"+id,
+        dataType: "JSON",
+        success: function(data){
+            $('#iv_id').html("Pinjaman #"+id);
+            $('#iv_judul').html(data.judul);
+            $('#iv_tahun_terbit').html(data.tahun_terbit);
+            $('#iv_pengarang').html(data.pengarang);
+            $('#iv_penerbit').html(data.penerbit);
+            $('#iv_nama').html(data.nama);
+            $('#iv_alamat').html(data.alamat);
+            $('#iv_instansi').html(data.instansi);
+            $('#iv_tglp').html("Pinjam "+data.tgl_pinjam);
+            $('#iv_tglk').html("Kembali "+data.tgl_kembali);
+            $('#iv_total').html("Rp "+data.denda);
+            $('#md_invoice').modal('show');
+        }
+    });
+}
 </script>
 </body>
 </html>
