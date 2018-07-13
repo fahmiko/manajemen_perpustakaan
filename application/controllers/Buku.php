@@ -8,6 +8,8 @@ class Buku extends CI_Controller {
 		$this->load->model('data_perpustakaan');
 		if(empty($this->session->userdata('username'))){
 			redirect('admin','refresh');
+		}else if ($this->session->userdata('level') == '2') {
+			redirect('welcome','refresh');
 		}
 	}
 	public function index()
@@ -59,6 +61,10 @@ class Buku extends CI_Controller {
 	//Fungsi edit buku dan kategori
 
 	public function edit_buku(){
+		if($this->session->userdata('level') == 1){
+			$this->session->set_flashdata('msg','Operator tidak dapat edit buku');
+			redirect('buku','refresh');
+		}
 		$data['dropdown'] = $this->data_perpustakaan->generate_dropdown('kategori','id_kategori','nama');
 		$id = $this->uri->segment(3);
 		$data['kategori'] = $this->data_perpustakaan->get_data('kategori');
@@ -112,6 +118,10 @@ class Buku extends CI_Controller {
 	}
 
 	public function edit_kategori(){
+		if($this->session->userdata('level') == 1){
+			$this->session->set_flashdata('msg','Operator tidak dapat edit kategori');
+			redirect('buku','refresh');
+		}
 		$id = $this->uri->segment(3);
 		$data['kategori'] = $this->data_perpustakaan->get_data_by_id('kategori', 'id_kategori', $id);
 		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[5]',
@@ -139,6 +149,10 @@ class Buku extends CI_Controller {
 
 	//Fungsi Delete Buku dan kategori
 	public function delete_buku(){
+		if($this->session->userdata('level') == 1){
+			$this->session->set_flashdata('msg','Operator tidak dapat menghapus buku');
+			redirect('buku','refresh');
+		}
 		$id = $this->uri->segment(3);
 		$data = $this->data_perpustakaan->get_data_by_id('buku', 'id_buku', $id);
 		if(file_exists('./assets/img/'.$data['gambar'])){
@@ -149,6 +163,10 @@ class Buku extends CI_Controller {
 	}
 
 	public function delete_kategori(){
+		if($this->session->userdata('level') == 1){
+			$this->session->set_flashdata('msg','Operator tidak dapat menghapus kategori');
+			redirect('buku','refresh');
+		}
 		$id = $this->uri->segment(3);
 		$this->data_perpustakaan->delete_data('kategori', 'id_kategori', $id);
 		redirect('buku','refresh');

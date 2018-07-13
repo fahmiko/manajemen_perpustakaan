@@ -3,14 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class data_admin extends CI_Model {
 
-	public function cek_data_login($data){
-		$query['get_user'] = $this->db->get_where('user', array(
-			'username' => $data['username'],
-			'password' => $data['password'])
+	public function cek_data_login(){
+		$query = $this->db->get_where('user', array(
+			'username' => $this->input->post('username'),
+			'password' => md5($this->input->post('password')))
 		);
-		$query['user'] = $query['get_user']->row_array();
-		$query['row'] = $query['get_user']->num_rows();
-		return $query;
+		if($query->num_rows()== 0){
+			$this->session->set_flashdata('msg','Cek Kembali username dan password');
+			redirect('admin/cek_login','refresh');
+		}else{
+			$this->session->set_userdata($query->row_array());
+			redirect('admin','refresh');
+		}
 	}
 
 }

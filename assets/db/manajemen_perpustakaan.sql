@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2018 at 11:55 PM
+-- Generation Time: Jul 13, 2018 at 02:25 AM
 -- Server version: 5.6.36
 -- PHP Version: 5.6.31
 
@@ -53,7 +53,8 @@ INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul`, `keterangan`, `tahun_terb
 (9, 5, 'Head First PHP & MySQL', 'If you\'re ready to create web pages more complex than those you can build with HTML and CSS, Head First PHP & MySQL is the ultimate learning guide to building dynamic, database-driven websites using PHP and MySQL. Packed with real-world examples, this book teaches you all the essentials of server-side programming, from the fundamentals of PHP and MySQL coding to advanced topics such as form validation, session IDs, cookies, database queries and joins, file I/O operations, content management, and more.', 2008, 'English', 'Lynn Beighley', 'O\'Reilly Media, Inc', 'php_mysql.jpg'),
 (10, 1, 'Practical DevOps', 'Harness the power of DevOps to boost your skill set and make your IT organization perform betterAbout This Book\r\nGet to know the background of DevOps so you understand the collaboration between different aspects of an IT organization and a software developer\r\nImprove your organization\'s performance to ensure smooth production of software and services\r\nDeploy top-quality software and ensure software maintenance and release management with this practical guide', 2016, 'English', 'Joakim Verona', 'Packt Publishing Ltd', 'devos.jpg'),
 (11, 6, 'Carding Pemula', 'Apakah Anda seseorang yang baru saja mengenal dunia maya? atau pemilik kartu kredit, admin situs, pebisnis yang mulai merambah dunia maya, atau seorang yang ingin tahu sisi lain dunia maya berkaitan dengan CyberCrime? Bila iya, buku ini dapat menjadi modal bagi Anda untuk lebih mengenal dunia maya. Carding merupakan suatu aksi menggunakan data pribadi orang lain seperti kartu kredit untuk bertransaksi secara online. Data yang digunakan biasanya merupakan data kartu kredit korban yang akan digunakan untuk membeli barang atau jasa yang pelaku inginkan. Pelaku inilah yang sering dikenal dengan sebutan carder. Buku ini mengupas berbagai hal mengenai carding mulai pengenalan siapa itu carder, bagaimana cara menjadi carder, contoh kasus carder yang tertangkap, dan lingkungan carder. Selain itu, pembaca juga akan mendapatkan pengetahuan tentang IRC Bot sebagai alat bantu carder dalam menjalankan aksinya hingga teknik-teknik yang dapat dipakai seorang carder untuk mendapatkan data penting milik orang lain. Teknik-teknik tersebut adalah SQL Injection dengan atau tanpa tools dan phising. Sepanjang perjalanan membaca buku ini, pengetahuan Anda tentang keamanan berselancar di internet pun akan ditambah karena buku ini juga membahas bagaimana carder dapat menyembunyikan IP address mereka. Tidak hanya itu, Anda akan ditunjukkan tools yang biasanya digunakan carder untuk melancarkan aksinya seperti Credit Card Validator, CVV Getter dan PayPal Login Checker. Di akhir buku ini Anda masih tetap akan mendapatkan tambahan pengetahuan agar dapat memperkecil kemungkinan diri Anda menjadi korban seorang carder, baik dari sisi pemilik kartu kredit maupun pemilik toko online. Mau ambil risiko lebih untuk menjadi korban carder? Jangan beli buku ini!', 2014, 'Indonesia', 'Aryya Dwisatya Widigdha', 'Elex Media Komputindo', 'carding.jpg'),
-(12, 7, 'Excel Pemula', 'Mengapa harus kursus kalau bisa menguasai MS Excel 2010 hanya dengan mempelajari buku ini. \r\nDi dalam buku ini membahas fitur-fitur utama & penting MS Excel, seperti:\r\n\r\n- Workbook, Worksheet, Data, dan Sel\r\n\r\n- Fungsi dan Formula\r\n\r\n- Olah Teks, Tanggal, dan Angka\r\n\r\n- Buat dan Desain Tabel\r\n\r\n- Chart dan Modifikasi Chart', 2016, 'Indonesia', 'J.U.D', 'Jubilee Enterprise', 'excel.jpg');
+(12, 7, 'Excel Pemula', 'Mengapa harus kursus kalau bisa menguasai MS Excel 2010 hanya dengan mempelajari buku ini. \r\nDi dalam buku ini membahas fitur-fitur utama & penting MS Excel, seperti:\r\n\r\n- Workbook, Worksheet, Data, dan Sel\r\n\r\n- Fungsi dan Formula\r\n\r\n- Olah Teks, Tanggal, dan Angka\r\n\r\n- Buat dan Desain Tabel\r\n\r\n- Chart dan Modifikasi Chart', 2016, 'Indonesia', 'J.U.D', 'Jubilee Enterprise', 'excel.jpg'),
+(13, 7, 'Buku Pintar Office', 'Untuk urusan mengetik, membuat laporan berupa angka, membuat presentasi, tidak terlepas dari peran aplikasi perkantoran, Microsoft Office salah satunya. Kita bisa menggunakan Microsoft Office Word, Excel, dan PowerPoint. Ketiga aplikasi ini digunakan hampir oleh setiap orang. Penggunaannya yang sangat mudah, juga menyajikan banyak fitur yang menawan dan meringankan pekerjaan.\r\n\r\nDi buku ini menjelaskan cara menggunakan Ms. Word, Excel, dan PowerPoint untuk pengguna Microsoft Office 2007 maupun 2010. Baca buku ini dan temukan betapa mudahnya bekerja dengan Microsoft Office.', 2012, 'Indonesia', 'Jarot S', 'MediaKita', 'ofice_pintar.jpg');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,14 @@ INSERT INTO `member` (`id_member`, `nama`, `alamat`, `instansi`) VALUES
 (1, 'Fahmiko Purnama Putra', 'Malang City Hardcore', 'Polinema'),
 (2, 'Irfak Hakiki', 'Malang', 'Polinema'),
 (3, 'Hanavi Dwi', 'Pakisaji', 'Polinema'),
-(4, 'M Nirwan Firdaus', 'Malang Raya', 'Polinema');
+(4, 'M Nirwan Firdaus', 'Malang Raya', 'Polinema'),
+(5, 'Donny Dwi', 'Bangil', 'Polinema'),
+(6, 'Dendy', 'Malang', 'Polinema'),
+(7, 'Taifuqurrohman', 'Kediri', 'Polinema'),
+(8, 'Fahrul Rosi', 'Blitar', 'Polinema'),
+(9, 'Satria', 'Malang', 'Polinema'),
+(10, 'Dani S', 'Kediri', 'Polinema'),
+(11, 'Sultan Alif', 'Bangil', 'Polinema');
 
 -- --------------------------------------------------------
 
@@ -126,14 +134,22 @@ CREATE TABLE `pinjaman` (
 --
 
 INSERT INTO `pinjaman` (`id_pinjaman`, `id_member`, `id_buku`, `id_user`, `tgl_pinjam`, `tgl_kembali`, `catatan`, `status`, `denda`) VALUES
-(1, 4, 4, 1, '2018-05-08', '2018-05-10', 'Belajar Web Dinamis', 'dipinjam', 0),
+(1, 4, 4, 1, '2018-05-08', '2018-05-10', 'Belajar Web Dinamis', 'kembali', 0),
 (2, 1, 2, 1, '2018-05-08', '2018-05-16', 'Desain Logo ', 'dipinjam', 0),
-(3, 1, 3, 1, '2018-05-08', '2018-05-15', 'Belajar mengelola Bitcoin', 'dipinjam', 0),
-(4, 1, 9, 1, '2018-05-08', '2018-05-15', 'Belajar sql dasar', 'dipinjam', 0),
-(5, 3, 12, 1, '2018-05-08', '2018-05-09', 'Buat uts excel', 'dipinjam', 0),
-(6, 2, 10, 1, '2018-05-08', '2018-05-11', 'Pengembangan software', 'dipinjam', 0),
-(7, 3, 8, 1, '2018-05-08', '2018-04-11', 'Belajar bobol facebook', 'dipinjam', 0),
-(8, 2, 1, 1, '2018-05-08', '2018-02-13', 'Perancangan ERD', 'dipinjam', 0);
+(3, 1, 3, 1, '2018-05-08', '2018-05-15', 'Belajar mengelola Bitcoin', 'kembali', 0),
+(4, 1, 9, 1, '2018-05-08', '2018-05-15', 'Belajar sql dasar', 'kembali', 0),
+(5, 3, 12, 1, '2018-05-08', '2018-05-09', 'Buat uts excel', 'kembali', 8000),
+(6, 2, 10, 1, '2018-05-08', '2018-05-11', 'Pengembangan software', 'kembali', 0),
+(7, 3, 8, 1, '2018-05-08', '2018-04-11', 'Belajar bobol facebook', 'kembali', 62000),
+(8, 2, 1, 1, '2018-05-08', '2018-02-13', 'Perancangan ERD', 'dipinjam', 0),
+(9, 5, 2, 1, '2018-05-08', '2017-12-03', 'Buat Desain', 'dipinjam', 0),
+(10, 11, 2, 1, '2018-05-08', '2018-05-09', 'Desain Jembatan', 'kembali', 8000),
+(11, 5, 4, 1, '2018-05-12', '2018-05-18', 'Catatan Kaki', 'dipinjam', 0),
+(12, 6, 2, 1, '2018-05-13', '2018-05-13', 'Desain Logo', 'dipinjam', 0),
+(13, 5, 3, 1, '2018-05-13', '2017-12-07', 'Mata uang online', 'kembali', 314000),
+(14, 5, 9, 1, '2018-05-14', '2018-05-16', ' njnknlknlknlknlknlknlknlk', 'kembali', 0),
+(15, 6, 9, 1, '2018-05-14', '2017-08-03', 'kmdaksmdlkmaslkmdlkmsalkdmlask', 'dipinjam', 0),
+(16, 7, 9, 1, '2018-05-15', '2018-04-04', 'Buat Catatan', 'kembali', 82000);
 
 -- --------------------------------------------------------
 
@@ -144,16 +160,38 @@ INSERT INTO `pinjaman` (`id_pinjaman`, `id_member`, `id_buku`, `id_user`, `tgl_p
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `username` varchar(12) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `akses` enum('admin','user') NOT NULL
+  `password` varchar(50) NOT NULL,
+  `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `akses`) VALUES
-(1, 'admin', 'admin', 'admin');
+INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 0),
+(2, 'operator', '4b583376b2767b923c3e1da60d10de59', 1),
+(3, 'member', 'aa08769cdcb26674c6706093503ff0a3', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_level`
+--
+
+CREATE TABLE `user_level` (
+  `id_level` int(11) NOT NULL,
+  `keterangan` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_level`
+--
+
+INSERT INTO `user_level` (`id_level`, `keterangan`) VALUES
+(0, 'admin'),
+(1, 'operator'),
+(2, 'member');
 
 --
 -- Indexes for dumped tables
@@ -191,7 +229,14 @@ ALTER TABLE `pinjaman`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `fk_level` (`level`);
+
+--
+-- Indexes for table `user_level`
+--
+ALTER TABLE `user_level`
+  ADD PRIMARY KEY (`id_level`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -201,22 +246,32 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `pinjaman`
 --
 ALTER TABLE `pinjaman`
-  MODIFY `id_pinjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pinjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user_level`
+--
+ALTER TABLE `user_level`
+  MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- Constraints for dumped tables
 --
@@ -234,6 +289,12 @@ ALTER TABLE `pinjaman`
   ADD CONSTRAINT `pinjaman_ibfk_1` FOREIGN KEY (`id_member`) REFERENCES `member` (`id_member`),
   ADD CONSTRAINT `pinjaman_ibfk_2` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id_buku`),
   ADD CONSTRAINT `pinjaman_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`level`) REFERENCES `user_level` (`id_level`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

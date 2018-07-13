@@ -14,11 +14,9 @@ class Admin extends CI_Controller {
 	{
 		if(empty($this->session->userdata('username'))){
 			$this->load->view('admin/login');			
+		}else if ($this->session->userdata('level') == '2') {
+			redirect('welcome','refresh');
 		}else{
-			$data['session'] = array('username' => $this->session->userdata('username'),
-									 'akses'   => $this->session->userdata('akses'),
-									 'id_user' => $this->session->userdata('id_user')
-									);
 			$data['member'] = $this->data_perpustakaan->get_data('member');
 			$data['buku']   = $this->data_perpustakaan->get_data('buku');
 			$data['pinjaman'] = $this->data_perpustakaan->get_data('pinjaman');
@@ -43,20 +41,7 @@ class Admin extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/login');
 		} else {
-			//Ambil data dari form
-			$data['user'] = array(
-				'username' => $this->input->post('username'),
-				'password' => $this->input->post('password')
-			);
-
-			$data['login']   = $this->data_admin->cek_data_login($data['user']);
-
-			if ($data['login']['row']==0) {
-				redirect('admin','refresh');
-			}else{
-				$data['session'] = $this->session->set_userdata($data['login']['user']);
-				redirect('admin', $data);
-			}
+			$data['login'] = $this->data_admin->cek_data_login();
 		}
 	}
 

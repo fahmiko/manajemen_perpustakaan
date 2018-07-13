@@ -13,6 +13,8 @@ class Pinjaman extends CI_Controller {
 		$this->load->library('form_validation');
 		if(empty($this->session->userdata('username'))){
 			redirect('admin','refresh');			
+		}else if ($this->session->userdata('level') == '2') {
+			redirect('welcome','refresh');
 		}
 	}
 	

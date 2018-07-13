@@ -1,3 +1,10 @@
+<?php
+if(($this->session->flashdata('msg') != null)){
+    echo "
+        <script>alert('".$this->session->flashdata('msg')."')</script>
+    ";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

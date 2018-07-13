@@ -19,7 +19,7 @@
         </a>
 
         <a class="navbar-brand" href="#">
-            Perpustakaan | Admin
+            Perpustakaan | <?=$this->session->userdata('level')?>
         </a>
 
         <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">

@@ -1,3 +1,8 @@
+ <?php 
+ if($this->session->flashdata('msg') != null){
+  echo "<script>alert('".$this->session->flashdata('msg')."')</script>";
+ }
+ ?>
  <div class="content">
  <div class="container-fluid">
  <div class="row">
