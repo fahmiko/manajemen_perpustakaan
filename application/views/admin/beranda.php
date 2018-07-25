@@ -65,45 +65,49 @@
                 	<div class="col-md-4">
                     	<div class="card text-white border-0">
                         	<div class="card-header bg-info">
-                            	Cara Peminjaman
-                        	</div>
-
-                        	<div class="card-body bg-info">
-                            	<ul>
-                            		<li>Datang ke admin</li>
-                            		<li>Harus Terdaftar sebagai member</li>
-                            		<li>Dapat meminjam buku dengan menyebutkan kode buku</li>
-                            	</ul>
-                        	</div>
-                    	</div>
-                	</div>
-                	<div class="col-md-4">
-                    	<div class="card text-white border-0">
-                        	<div class="card-header bg-success">
-                            	Tugas Admin
+                            	<b>Cara Peminjaman</b>
                         	</div>
 
                         	<div class="card-body bg-success">
                             	<ul>
-                            		<li>Mendaftarkan Member Baru</li>
-                            		<li>CRUD Buku</li>
-                            		<li>Meminjamkan buku kepada member</li>
-                            		<li>Rekap Pinjaman</li>
+                            		<li>Datang ke admin/operator</li>
+                            		<li>Daftar Member(jika belum punya)</li>
+                            		<li>Dapat meminjam buku dengan menyebutkan kode buku</li>
+                                    <li>Member Login peminjaman</li>
                             	</ul>
                         	</div>
                     	</div>
                 	</div>
                 	<div class="col-md-4">
                     	<div class="card text-white border-0">
-                        	<div class="card-header bg-danger">
-                            	Peraturan
+                        	<div class="card-header bg-info">
+                            	<b>Admin</b>
                         	</div>
 
                         	<div class="card-body bg-danger">
                             	<ul>
-                            		<li>Member harus mengembalikan buku sebelum jatuh tempo</li>
-                            		<li>Member terkena denda jika terlambat</li>
-                            		<li>Data pinjaman tidak dapat di hapus</li>
+                            		<li>Mendaftarkan Member Baru</li>
+                                    <li>Mengganti tipe member(gold, silver)</li>
+                            		<li>CRUD Buku</li>
+                            		<li>Meminjamkan buku kepada member</li>
+                            		<li>Transaksi Pengembalian Buku</li>
+                            	</ul>
+                        	</div>
+                    	</div>
+                	</div>
+                	<div class="col-md-4">
+                    	<div class="card text-white border-0">
+                        	<div class="card-header bg-info">
+                            	<b>Operator</b>
+                        	</div>
+
+                        	<div class="card-body bg-warning">
+                            	<ul>
+                            		<li>Tambah Member</li>
+                            		<li>Tambah Buku</li>
+                                    <li>Tambah Kategori</li>
+                            		<li>Tambah Peminjaman</li>
+                                    <li>Tidak dapat edit dan hapus</li>
                             	</ul>
                         	</div>
                     	</div>

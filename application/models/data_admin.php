@@ -13,7 +13,12 @@ class data_admin extends CI_Model {
 			redirect('admin/cek_login','refresh');
 		}else{
 			$this->session->set_userdata($query->row_array());
-			redirect('admin','refresh');
+			// echo $this->session->userdata('level');
+			if($this->session->userdata('level') == 2){
+				redirect('owner','refresh');
+			}else{
+				redirect('admin','refresh');
+			}
 		}
 	}
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2018 at 02:25 AM
+-- Generation Time: Jul 25, 2018 at 03:31 PM
 -- Server version: 5.6.36
 -- PHP Version: 5.6.31
 
@@ -89,27 +89,30 @@ INSERT INTO `kategori` (`id_kategori`, `nama`, `deskripsi`) VALUES
 
 CREATE TABLE `member` (
   `id_member` int(11) NOT NULL,
+  `usr_member` varchar(25) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `nama` varchar(25) NOT NULL,
   `alamat` varchar(50) NOT NULL,
-  `instansi` varchar(25) NOT NULL
+  `instansi` varchar(25) NOT NULL,
+  `type` enum('gold','silver') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`id_member`, `nama`, `alamat`, `instansi`) VALUES
-(1, 'Fahmiko Purnama Putra', 'Malang City Hardcore', 'Polinema'),
-(2, 'Irfak Hakiki', 'Malang', 'Polinema'),
-(3, 'Hanavi Dwi', 'Pakisaji', 'Polinema'),
-(4, 'M Nirwan Firdaus', 'Malang Raya', 'Polinema'),
-(5, 'Donny Dwi', 'Bangil', 'Polinema'),
-(6, 'Dendy', 'Malang', 'Polinema'),
-(7, 'Taifuqurrohman', 'Kediri', 'Polinema'),
-(8, 'Fahrul Rosi', 'Blitar', 'Polinema'),
-(9, 'Satria', 'Malang', 'Polinema'),
-(10, 'Dani S', 'Kediri', 'Polinema'),
-(11, 'Sultan Alif', 'Bangil', 'Polinema');
+INSERT INTO `member` (`id_member`, `usr_member`, `password`, `nama`, `alamat`, `instansi`, `type`) VALUES
+(1, 'fahmiko', '3af73c3481c33430c92200785eb1643d', 'Fahmiko Purnama Putra', 'Malang City Hardcore', 'Polinema', 'gold'),
+(2, 'silver', '97f014516561ef487ec368d6158eb3f4', 'Irfak Hakiki', 'Malang', 'Polinema', 'silver'),
+(3, 'hanavi', 'fdd87dee3ff621e042596ce19b14880c', 'Hanavi Dwi', 'Pakisaji', 'Polinema', 'gold'),
+(4, 'nirwan', '28e47f714c1fcb538a669b971ee6ce46', 'M Nirwan Firdaus', 'Malang Raya', 'Polinema', 'gold'),
+(5, 'doni', '978d1e033fee2a6cd73d0e30e60cfc48', 'Donny Dwi', 'Bangil', 'Polinema', 'silver'),
+(6, '', '', 'Dendy', 'Malang', 'Polinema', 'gold'),
+(7, '', '', 'Taifuqurrohman', 'Kediri', 'Polinema', 'silver'),
+(8, '', '', 'Fahrul Rosi', 'Blitar', 'Polinema', 'gold'),
+(9, '', '', 'Satria', 'Malang', 'Polinema', 'gold'),
+(10, '', '', 'Dani S', 'Kediri', 'Polinema', 'gold'),
+(11, '', '', 'Sultan Alif', 'Bangil', 'Polinema', 'gold');
 
 -- --------------------------------------------------------
 
@@ -121,7 +124,7 @@ CREATE TABLE `pinjaman` (
   `id_pinjaman` int(11) NOT NULL,
   `id_member` int(11) NOT NULL,
   `id_buku` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
   `tgl_pinjam` date NOT NULL,
   `tgl_kembali` date NOT NULL,
   `catatan` text NOT NULL,
@@ -149,7 +152,12 @@ INSERT INTO `pinjaman` (`id_pinjaman`, `id_member`, `id_buku`, `id_user`, `tgl_p
 (13, 5, 3, 1, '2018-05-13', '2017-12-07', 'Mata uang online', 'kembali', 314000),
 (14, 5, 9, 1, '2018-05-14', '2018-05-16', ' njnknlknlknlknlknlknlknlk', 'kembali', 0),
 (15, 6, 9, 1, '2018-05-14', '2017-08-03', 'kmdaksmdlkmaslkmdlkmsalkdmlask', 'dipinjam', 0),
-(16, 7, 9, 1, '2018-05-15', '2018-04-04', 'Buat Catatan', 'kembali', 82000);
+(16, 7, 9, 1, '2018-05-15', '2018-04-04', 'Buat Catatan', 'kembali', 82000),
+(17, 5, 4, 1, '2018-07-25', '2018-07-27', 'Baca Baca', 'dipinjam', 0),
+(18, 5, 10, 1, '2018-07-25', '2018-07-28', 'Praktikum', 'dipinjam', 0),
+(19, 5, 9, 1, '2018-07-25', '2018-07-31', 'Coba coba', 'dipinjam', 0),
+(20, 1, 9, NULL, '2018-07-25', '2018-08-01', 'Iseng', 'dipinjam', 0),
+(21, 1, 13, NULL, '2018-07-25', '2018-08-01', 'Cara memasak', 'dipinjam', 0);
 
 -- --------------------------------------------------------
 
@@ -171,7 +179,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 0),
 (2, 'operator', '4b583376b2767b923c3e1da60d10de59', 1),
-(3, 'member', 'aa08769cdcb26674c6706093503ff0a3', 2);
+(3, 'owner', '72122ce96bfec66e2396d2e25225d70a', 2);
 
 -- --------------------------------------------------------
 
@@ -191,7 +199,7 @@ CREATE TABLE `user_level` (
 INSERT INTO `user_level` (`id_level`, `keterangan`) VALUES
 (0, 'admin'),
 (1, 'operator'),
-(2, 'member');
+(2, 'owner');
 
 --
 -- Indexes for dumped tables
@@ -264,7 +272,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `pinjaman`
 --
 ALTER TABLE `pinjaman`
-  MODIFY `id_pinjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_pinjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `user_level`

@@ -90,7 +90,9 @@ if($pinjam == null){
             <div class="col-md-4">
                 <div class="form-group">
                     <p class="font-weight-bold mb-4">Status</p>
-                    <?php echo $status ?>
+                    <?php echo $status;
+                        echo @$status2;
+                    ?>
                 </div>
                 <p class="font-weight-bold mb-4">Total</p>
                 <?php echo form_open('pinjaman/checkout'); ?>

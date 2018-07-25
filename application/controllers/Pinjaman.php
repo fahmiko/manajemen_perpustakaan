@@ -9,47 +9,12 @@ class Pinjaman extends CI_Controller {
 		$this->load->model('data_admin');
 		$this->load->model('data_pinjaman');
 		$this->load->model('data_perpustakaan');
+		$this->load->model('data_member');
 		$this->load->helper(array('date','form','url','my'));
 		$this->load->library('form_validation');
 		if(empty($this->session->userdata('username'))){
 			redirect('admin','refresh');			
-		}else if ($this->session->userdata('level') == '2') {
-			redirect('welcome','refresh');
 		}
-	}
-	
-	public function test_data(){
-		$this->load->library('table');
-		$data['book'] = $this->data_pinjaman->get_popular_book();
-		$data['member'] = $this->data_pinjaman->get_popular_member();
-		echo "Buku yang sering dipinjam<br>";
-		echo "<table>
-				<tr><td>ID</td>
-					<td>Judul</td>
-					<td>Total Pinjam</td>
-				</tr>";
-
-		foreach ($data['book']->result() as $show) {
-			echo "<tr><td>";
-			echo $show->id_buku."</td><td>";
-			echo $show->judul."</td><td>";
-			echo $show->total."</td></tr>";
-		}
-		echo "</table>";
-		echo "<br>Member yang sering meminjam<br>";
-		echo "<table>
-				<tr><td>ID</td>
-					<td>Judul</td>
-					<td>Total Pinjam</td>
-				</tr>";
-
-		foreach ($data['member']->result() as $show) {
-			echo "<tr><td>";
-			echo $show->id_member."</td><td>";
-			echo $show->nama."</td><td>";
-			echo $show->total."</td></tr>";
-		}
-		echo "</table>";
 	}
 
 	public function index()
@@ -96,8 +61,10 @@ class Pinjaman extends CI_Controller {
 					$this->load->view('templates/footer');
 				}else{
 					foreach ($data['pinjam']->result() as $key) {
+						$id_member = $key->id_member;
 						$date1 = date_create($key->tgl_kembali);
 					}
+					$data['type'] = $this->data_member->cek_tipe_member($id_member);
 					$date2 = date_create(date('Y-m-d'));
 					$diff = date_diff($date1,$date2);
 					$data['hari'] = 0;
@@ -109,6 +76,10 @@ class Pinjaman extends CI_Controller {
 						$data['hari'] = $diff->format("%a");	
 						$data['denda'] = $data['hari'] * 2000;
 						$data['status'] = '<button class="btn btn-outline-danger">Terlambat</button>';
+						if($data['type'] == 'gold'){
+							$data['status2'] = '<button class="btn btn-outline-warning">Diskon 50%</button>';
+							$data['denda'] /= 2;
+						}
 					}
 
 					$this->load->view('templates/header');

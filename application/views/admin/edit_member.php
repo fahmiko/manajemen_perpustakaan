@@ -35,6 +35,16 @@
  	    <input type="text" class="form-control" name="instansi" placeholder="Instansi" required="" value="<?php echo $member['instansi'] ?>">
  	    <div class="invalid-feedback">Isi instansi dulu</div>
  	</div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-graduation-cap"></i></span>
+        </div>
+            <select name="type" class="form-control">
+                <option value="gold">Gold</option>
+                <option value="silver">Silver</option>
+            </select>
+        <div class="invalid-feedback">pilih Tipe dulu</div>
+    </div>
  	<div class="input-group mb-3">
  		 <button type="submit" id="submitBtn" class="btn btn-primary">Save changes</button>
  		 <button type="reset" class="btn btn-warning">Reset</button>

@@ -14,6 +14,7 @@
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>Instansi</th>
+                            <th>Tipe</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -24,6 +25,7 @@
                         	echo "<td>$data->nama</td>";
                             echo "<td>$data->alamat</td>";
                         	echo "<td>$data->instansi</td>";
+                            echo "<td>$data->type</td>";
                             echo "<td>
                                 <a class='btn btn-primary btn-sm' href='member/edit_member/".$data->id_member."'><span class='fa fa-edit'></span></a>
                                 <a class='btn btn-danger btn-sm' href='member/delete_member/".$data->id_member."'><span class='fa fa-trash' onclick=\"return confirm('ingin hapus member ?')\"></span></a>

@@ -19,9 +19,8 @@
 				<ul>
                     <li><a class="list" href="<?php echo base_url('Welcome') ?>"> HOME </a></li>
                     <li><a class="list" href="<?php echo base_url('Welcome/books') ?>">BOOKS</a></li>
-                    <li><a class="list" href="<?php echo base_url('Welcome/loan') ?>">LOAN</a></li>
-                    <li><a class="list" href="<?php echo base_url('Welcome/help') ?>">HELP</a></li>
-                    <li><a class="list" href="<?php echo base_url('Welcome/login') ?>">LOGIN</a></li>
+                    <li><a class="list" href="<?php echo base_url('members/login') ?>">LOGIN MEMBER</a></li>
+                    <li><a class="list" href="<?php echo base_url('admin/cek_login') ?>">LOGIN ADMIN</a></li>
 				</ul>
 			</center>			
 		</div>

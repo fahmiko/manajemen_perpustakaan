@@ -14,8 +14,6 @@ class Admin extends CI_Controller {
 	{
 		if(empty($this->session->userdata('username'))){
 			$this->load->view('admin/login');			
-		}else if ($this->session->userdata('level') == '2') {
-			redirect('welcome','refresh');
 		}else{
 			$data['member'] = $this->data_perpustakaan->get_data('member');
 			$data['buku']   = $this->data_perpustakaan->get_data('buku');

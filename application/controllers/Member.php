@@ -10,8 +10,6 @@ class Member extends CI_Controller {
 		$this->load->library('form_validation');
 		if(empty($this->session->userdata('username'))){
 			redirect('admin','refresh');			
-		}else if ($this->session->userdata('level') == '2') {
-			redirect('welcome','refresh');
 		}
 	}
 
@@ -26,6 +24,7 @@ class Member extends CI_Controller {
 	public function tambah_member(){
 		$data['member'] = $this->data_perpustakaan->get_data('member');
 		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[5]|is_unique[member.nama]');
+		$this->form_validation->set_rules('usr_member', 'Username', 'required|min_length[5]|is_unique[member.usr_member]');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header');
 			$this->load->view('admin/member',$data);
@@ -33,8 +32,11 @@ class Member extends CI_Controller {
 		} else {
 			$data['input'] = array(
 				'nama' => $this->input->post('nama'),
+				'usr_member' => $this->input->post('usr_member'),
+				'password' =>$this->input->post('password'),
 				'alamat' => $this->input->post('alamat'),
-				'instansi' => $this->input->post('instansi')
+				'instansi' => $this->input->post('instansi'),
+				'type' => $this->input->post('type')
 			);
 			$this->data_perpustakaan->set_data('member','',$data['input'],0);
 			redirect('Member','refresh');
@@ -42,6 +44,10 @@ class Member extends CI_Controller {
 	}
 
 	public function edit_member(){
+		if($this->session->userdata('level') != 0){
+			$this->session->set_flashdata('msg','Operator/Owner tidak dapat edit member');
+			redirect('member','refresh');
+		}
 		$id = $this->uri->segment(3);
 		$data['member'] = $this->data_perpustakaan->get_data_by_id('member', 'id_member', $id);
 		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[5]');
@@ -55,7 +61,8 @@ class Member extends CI_Controller {
 			$data['input'] = array(
 				'nama' => $this->input->post('nama'),
 				'alamat' => $this->input->post('alamat'),
-				'instansi' => $this->input->post('instansi')
+				'instansi' => $this->input->post('instansi'),
+				'type' => $this->input->post('type')
 			);
 			$this->data_perpustakaan->set_data('member','id_member',$data['input'], $id);
 			redirect('member','refresh');
@@ -63,6 +70,10 @@ class Member extends CI_Controller {
 	}
 
 	public function delete_member(){
+		if($this->session->userdata('level') != 0){
+			$this->session->set_flashdata('msg','Operator/Owner tidak dapat menghapus member');
+			redirect('member','refresh');
+		}
 		$id = $this->uri->segment(3);
 		$this->data_perpustakaan->delete_data('member', 'id_member', $id);
 		redirect('Member','refresh');

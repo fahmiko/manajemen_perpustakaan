@@ -19,33 +19,22 @@
         </a>
 
         <a class="navbar-brand" href="#">
-            Perpustakaan | <?=$this->session->userdata('level')?>
+            Perpustakaan | <?php
+            if($this->session->userdata('level')== 0){
+                echo "Admin";
+            }else if($this->session->userdata('level')== 1) {
+                echo "Operator";
+            }else if($this->session->userdata('level')== 3){
+                echo "Owner";
+            }
+            ?>
         </a>
 
         <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
             <i class="fa fa-bars"></i>
         </a>
 
-        <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="small ml-1 d-md-down-none"><?php echo $this->session->userdata('username') ?></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header">Account</div>
-
-                    <a href="#" class="dropdown-item">
-                        <i class="fa fa-wrench"></i> Settings
-                    </a>
-
-                    <a href="<?php echo site_url('admin/logout') ?>" class="dropdown-item">
-                        <i class="fa fa-lock"></i> Logout
-                    </a>
-                </div>
-            </li>
-        </ul>
+        <ul class="navbar-nav ml-auto"></ul>
     </nav>
 
     <div class="main-container">
@@ -110,6 +99,11 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="<?php echo site_url('admin/logout') ?>" class="nav-link">
+                            <i class="fa fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
 
 <!--                     <li class="nav-title">More</li>
 
@@ -156,6 +150,20 @@
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
+                        <span class="input-group-text"><i>@</i></span>
+                    </div>
+                    <input type="text" name="usr_member" class="form-control" placeholder="Username" required="" minlength="3">
+                    <div class="invalid-feedback">Isi username dulu</div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    </div>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="" minlength="6">
+                    <div class="invalid-feedback">Isi password dulu</div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-address-card"></i></span>
                     </div>
                     <textarea class="form-control" name="alamat" placeholder="Alamat" required="" minlength="5"></textarea>
@@ -166,6 +174,16 @@
                         <span class="input-group-text"><i class="fa fa-graduation-cap"></i></span>
                     </div>
                     <input type="text" name="instansi" class="form-control" placeholder="Instansi" required="" minlength="3">
+                    <div class="invalid-feedback">Isi instansi dulu</div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-list-alt"></i></span>
+                    </div>
+                    <select name="type" class="form-control">
+                        <option value="gold">Gold</option>
+                        <option value="silver">Silver</option>
+                    </select>
                     <div class="invalid-feedback">Isi instansi dulu</div>
                 </div>
             </div>
